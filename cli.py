@@ -20,7 +20,7 @@ import time
 import xml
 import xmlrpclib
 import string
-
+message_number=0
 APPNAME = 'PyBitmessage'
 CHARACTERS = string.digits + string.ascii_letters
 SECURE_RANDOM = random.SystemRandom()
@@ -797,8 +797,8 @@ class Bitmessage(object):
                         for each in range (0, number_of_addresses):
                             label = json_addresses['addresses'][each]['label']
                             address = json_addresses['addresses'][each]['address']
-                            if label.startswith('[chan] '):
-                                label = label.split('[chan] ')[1]
+                            if label.startswith('[chan] '): pass
+                                #vvv  redef label = label.split('[chan] ')[1] ################################??????
                             # address entered was a label and is found
                             elif to_address == label:
                                 found = True
