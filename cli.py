@@ -5,7 +5,7 @@
 # See http://www.opensource.org/licenses/mit-license.php
 # https://bitmessage.org/wiki/API_Reference for API documentation
 import base64
-import ConfigParser
+import ConfigParser   # lgtm[py/conflicting-attributes]
 import datetime
 import imghdr
 import json
