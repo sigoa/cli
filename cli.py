@@ -671,7 +671,7 @@ class Bitmessage(object):
                             print('Couldn\'t delete address. Expected response of \'success\', got: {0}'.format(leaving_channel))
         except socket.error:
             self.api_import = False
-            print('Couldn\'t delete address due to an API connection issue')      
+            print('Couldn\'t delete address due to an API connection issue')
 
 
     # Allows attachments and messages/broadcats to be saved
@@ -706,7 +706,7 @@ class Bitmessage(object):
     # Allows users to attach a file to their message or broadcast
     def attachment(self):
         while True:
-            is_image = False
+            ####is_image = False
             the_attachment = ''
             file_path = self.user_input('Please enter the path to the attachment')
             if os.path.isfile(file_path):
@@ -823,7 +823,7 @@ class Bitmessage(object):
                                 address = jsonAddresses['addresses'][each]['address']
                                 if label.startswith('[chan] '):
                                     label = label.split('[chan] ')[1]
-                                # address entered was a label and is found
+                                # address entered was a label and is found          ---------- fromadd unused cinfused from_address
                                 if fromAddress == label:
                                     found = True
                                     fromAddress = address
@@ -966,7 +966,7 @@ class Bitmessage(object):
         except socket.error:
             self.api_import = False
             print('Couldn\'t access inbox due to an API connection issue')
-        else:        
+        else:
             total_messages = len(inbox_messages['inboxMessages'])
             messages_printed = 0
             messages_unread = 0
