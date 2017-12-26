@@ -11,7 +11,7 @@ import imghdr
 import json
 import os
 import random
-import signal
+#import signal
 import socket
 import subprocess
 import sys
@@ -129,7 +129,7 @@ class Bitmessage(object):
                         self.preparations()
                         time.sleep(2.5)
                 except AttributeError:
-                    pass                  
+                    pass
                 return the_input
 
 
@@ -267,13 +267,13 @@ class Bitmessage(object):
                     setting_input = self.user_input('What setting would you like to modify? (enter to exit)').lower()
                     if setting_input == 'type':
                         setting_input = self.user_input('Possibilities: \'none\', \'SOCKS4a\', \'SOCKS5\'').lower()
-                        if setting_input in PROXY_TYPE_DICT.keys():                            
+                        if setting_input in PROXY_TYPE_DICT.keys():
                             CONFIG.set('bitmessagesettings', 'socksproxytype', PROXY_TYPE_DICT[setting_input])
                             with open(self.keys_file, 'w') as configfile:
                                 CONFIG.write(configfile)
                         else:
                             print('socksproxytype was not changed')
-                            invalidInput = True
+                            ###invalidInput = True
                     elif setting_input == 'port':
                         try:
                             setting_input = int(self.user_input('Please input proxy port'))
