@@ -746,7 +746,7 @@ class Bitmessage(object):
             print('     Attachment detected as an Image.')
             print('<img> tags will be automatically included.')
             print('------------------------------------------\n')
-            is_image = True
+            ###is_image = True
 
         print('Reading file...')
         with open(filePath, 'rb') as f:
@@ -1425,7 +1425,7 @@ class Bitmessage(object):
                 if verify_delete in ['yes', 'y']:
                     self.delete_inbox_message(message_number)
                     print('Message Deleted.')
- 
+
         elif which_box in ['outbox', 'o']:
             self.read_sent_message(message_number)
             # Gives the user the option to delete the message
