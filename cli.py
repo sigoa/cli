@@ -285,7 +285,7 @@ class Bitmessage(object):
                                 print('That\'s an invalid port number')
                         except ValueError:
                             print('How were you expecting that to work?')
-                            invalidInput = True
+                            ###invalidInput = True
                     elif setting_input == 'host':
                         setting_input = int(self.user_input('Please input proxy hostname'))
                         CONFIG.set('bitmessagesettings', 'sockshostname', setting_input)
