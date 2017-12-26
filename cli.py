@@ -1164,7 +1164,7 @@ class Bitmessage(object):
             self.api_import = False
             print('Couldn\'t add to address book due to an API connection issue')
 
-
+    @classmethod
     def get_api_error_code(self, response):
         if 'API Error' in response:
             # If we have an API error, return the number by getting
@@ -1253,7 +1253,7 @@ class Bitmessage(object):
     def delete_inbox_message(self, message_number):
         try:
             inbox_messages = json.loads(self.api.getAllInboxMessages())
-            total_messages = len(inbox_messages['inboxMessages'])
+            ###total_messages = len(inbox_messages['inboxMessages'])
             # gets the message ID via the message index number
             # TODO - message_number is wrapped in an int(), needed?
             message_id = inbox_messages['inboxMessages'][message_number]['msgid']
@@ -1373,7 +1373,7 @@ class Bitmessage(object):
                 if verify_delete in ['yes', 'y']:
                     delete_inbox_message(self, message_number)
                     print('Message Deleted.')
- 
+
         elif read_which in ['outbox', 'o']:
             self.read_sent_message(message_number)
             # Gives the user the option to delete the message
@@ -1572,7 +1572,7 @@ class Bitmessage(object):
             # Found this text in the message, there is probably an attachment
             if ';base64,' in message:
                 attachment_position = message.index(';base64,')
-                attachment_end_position = message.index("' />")
+                ###attachment_end_position = message.index("' />")
                 # We can get the filename too
                 if "alt = '" in message:
                     # Finds position of the filename
