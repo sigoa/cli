@@ -1596,7 +1596,7 @@ class Bitmessage(object):
             else:
                 break
 
-
+    @classmethod
     def view_help(self):
         # I could use neat formatting here, but all that really does is
         # shrink line space (good) and mess with readability. (bad)
