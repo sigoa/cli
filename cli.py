@@ -515,7 +515,7 @@ class Bitmessage(object):
             while True:
                 unsubscribe_verify = self.user_input('Are you sure, (Y)/(n)').lower()
                 if unsubscribe_verify in ['yes', 'y']:
-                    a = self.api.deleteSubscription(address)
+                    self.api.deleteSubscription(address) # a=
                     print('You are now unsubscribed from: {0}'.format(address))
                 else:
                     print("You weren't unsubscribed from anything.")
